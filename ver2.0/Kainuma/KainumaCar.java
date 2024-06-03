@@ -42,12 +42,11 @@ public class KainumaCar extends AbstCar {
     private void switchDirection() {
         if (LeftEdgeTracer) {
             curNavi = new KainumaNaiveRightEdgeTracer();
-            System.out.println("Right Edge!!");
         } else {
             curNavi = new KainumaNaiveLeftEdgeTracer();
-            System.out.println("Left Edge!!");
         }
         LeftEdgeTracer = !LeftEdgeTracer; // 反転してエッジ走行を切り替える
+        Sound.playTone(440, 500); // 440Hz のトーンを 500ms 再生
     }
 
     /**
